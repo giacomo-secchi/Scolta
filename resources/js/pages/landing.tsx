@@ -6,19 +6,21 @@ import Testimonials from '@/components/testimonials';
 import { Button } from '@/components/ui/button';
 import AppLogo from '@/components/app-logo';
 import { useForcedAppearance } from '@/hooks/use-appearance';
+import { useTrans } from '@/hooks/use-translations';
+
 
 export default function Landing({
     canRegister = true,
 }: {
     canRegister?: boolean;
 }) {
-    const { auth, name } = usePage().props;
+    const { t } = useTrans();
 
     useForcedAppearance('light');
 
     return (
         <>
-            <Head title="AI Service Desk">
+            <Head title={t('AI Service Desk')}>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
@@ -38,15 +40,15 @@ export default function Landing({
                         <Testimonials />
                         <section className="py-20 bg-slate-50">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl font-bold">Perché scegliere Scolta?</h2>
+                            <h2 className="text-3xl font-bold">{t('Why choose Scolta?')}</h2>
                         </div>
                         {/* Qui potresti aggiungere delle feature cards */}
                         </section>
 
                         <section className="py-20 bg-blue-600 text-white text-center">
-                            <h2 className="text-3xl font-bold mb-6">Pronto a ottimizzare i tuoi ticket?</h2>
+                            <h2 className="text-3xl font-bold mb-6">{t('Ready to optimize your tickets?')}</h2>
                             <Button variant="outline" className="text-blue-600 bg-white hover:bg-slate-100">
-                                Prenota una Demo Gratuita
+                                {t('Book a Free Demo')}
                             </Button>
                         </section>
                     </main>

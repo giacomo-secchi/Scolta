@@ -1,9 +1,20 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useTrans } from '@/hooks/use-translations';
 
 export default function Testimonials() {
+  const { t } = useTrans();
+
   const reviews = [
-    { name: "Marco R.", role: "Ops Manager", text: "Scolta ha trasformato il nostro caos in un flusso ordinato. Il dispatching AI è infallibile." },
-    { name: "Elena V.", role: "CEO @ GasFlow", text: "La migliore implementazione di AI per Service Desk mai provata. Installazione in 10 minuti." }
+    {
+      name: 'Marco R.',
+      role: t('Ops Manager'),
+      text: t('Scolta turned our chaos into an orderly flow. The AI dispatching is flawless.'),
+    },
+    {
+      name: 'Elena V.',
+      role: t('CEO @ GasFlow'),
+      text: t('The best AI Service Desk implementation we have ever tried. Setup in 10 minutes.'),
+    },
   ];
 
   return (
