@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 
 export type ResolvedAppearance = 'light' | 'dark';
 export type Appearance = ResolvedAppearance | 'system';
@@ -112,4 +112,25 @@ export function useAppearance(): UseAppearanceReturn {
     };
 
     return { appearance, resolvedAppearance, updateAppearance } as const;
+}
+
+export function useForcedAppearance(appearance: ResolvedAppearance): void {
+    useEffect(() => {
+        if (typeof document === 'undefined') {
+            return;
+        }
+
+        const root = document.documentElement;
+        const hadDarkClass = root.classList.contains('dark');
+        const previousColorScheme = root.style.colorScheme;
+        const isDark = appearance === 'dark';
+
+        root.classList.toggle('dark', isDark);
+        root.style.colorScheme = isDark ? 'dark' : 'light';
+
+        return () => {
+            root.classList.toggle('dark', hadDarkClass);
+            root.style.colorScheme = previousColorScheme;
+        };
+    }, [appearance]);
 }
