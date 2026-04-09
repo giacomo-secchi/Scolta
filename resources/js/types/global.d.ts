@@ -9,6 +9,7 @@ declare module '@inertiajs/core' {
             [key: string]: unknown;
             locale: string;
             language: Record<string, string>;
+            contactEmail: string;
         };
     }
 }

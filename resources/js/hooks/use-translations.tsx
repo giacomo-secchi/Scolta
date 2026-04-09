@@ -1,8 +1,7 @@
-import { PageProps } from '@/types';
 import { usePage } from '@inertiajs/react';
 
 export function useTrans() {
-    const { language = {} } = usePage<PageProps>().props;
+    const { language = {} } = usePage().props;
 
     const t = (key: string, replace: Record<string, string> = {}) => {
         let translation = language[key] || key;

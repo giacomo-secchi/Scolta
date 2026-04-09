@@ -1,13 +1,12 @@
 import { Head, Link, usePage } from '@inertiajs/react';
-import { dashboard, login, register } from '@/routes';
-import Hero from '@/components/hero';
-import TrustBar from '@/components/trust-bar'; 
-import Testimonials from '@/components/testimonials'; 
-import { Button } from '@/components/ui/button';
+import Hero from '@/components/landing/hero';
+import TrustBar from '@/components/landing/trust-bar'; 
+import Testimonials from '@/components/landing/testimonials'; 
 import AppLogo from '@/components/app-logo';
+import Features from '@/components/landing/features';
+import Contact from '@/components/landing/contact';
 import { useForcedAppearance } from '@/hooks/use-appearance';
 import { useTrans } from '@/hooks/use-translations';
-
 
 export default function Landing({
     canRegister = true,
@@ -27,30 +26,17 @@ export default function Landing({
                     rel="stylesheet"
                 />
             </Head>
-            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
+            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] py-6 text-[#1b1b18] lg:justify-center lg:py-8 dark:bg-[#0a0a0a]">
                 <header className="mb-6 text-sm">
-                    <div className="flex items-center gap-2.5">
-                        <AppLogo />
-                    </div>
+                    <AppLogo />
                 </header>
-                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <main>
+                 <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
+                    <main className="w-full">
                         <Hero />
                         <TrustBar />
                         <Testimonials />
-                        <section className="py-20 bg-slate-50">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl font-bold">{t('Why choose Scolta?')}</h2>
-                        </div>
-                        {/* Qui potresti aggiungere delle feature cards */}
-                        </section>
-
-                        <section className="py-20 bg-blue-600 text-white text-center">
-                            <h2 className="text-3xl font-bold mb-6">{t('Ready to optimize your tickets?')}</h2>
-                            <Button variant="outline" className="text-blue-600 bg-white hover:bg-slate-100">
-                                {t('Book a Free Demo')}
-                            </Button>
-                        </section>
+                        <Features />
+                        <Contact />
                     </main>
                 </div>
                 <div className="hidden h-14.5 lg:block"></div>
