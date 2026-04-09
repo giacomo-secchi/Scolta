@@ -8,13 +8,8 @@ import Contact from '@/components/landing/contact';
 import { useForcedAppearance } from '@/hooks/use-appearance';
 import { useTrans } from '@/hooks/use-translations';
 
-export default function Landing({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function Landing() {
     const { t } = useTrans();
-
     useForcedAppearance('light');
 
     return (
