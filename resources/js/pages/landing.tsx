@@ -1,4 +1,4 @@
-import { Head, Link, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import Hero from '@/components/landing/hero';
 import TrustBar from '@/components/landing/trust-bar'; 
 import Testimonials from '@/components/landing/testimonials'; 
