@@ -27,8 +27,7 @@ return [
     'central_domains' => [
         // '127.0.0.1',
         // 'localhost',
-        'scolta.test',
-        'scolta.it'
+        parse_url(config('app.url'), PHP_URL_HOST),
     ],
 
     /**
