@@ -44,7 +44,7 @@ class HandleInertiaRequests extends Middleware
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
             'locale' => app()->getLocale(),
             'language' => function () {
-                $path = lang_path(app()->getLocale() . '.json');
+                $path = lang_path(app()->getLocale().'.json');
 
                 return file_exists($path)
                     ? json_decode(file_get_contents($path), true)
