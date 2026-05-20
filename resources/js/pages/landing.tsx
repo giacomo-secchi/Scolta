@@ -1,7 +1,7 @@
 import { Head } from '@inertiajs/react';
 import Hero from '@/components/landing/hero';
-import TrustBar from '@/components/landing/trust-bar'; 
-import Testimonials from '@/components/landing/testimonials'; 
+import TrustBar from '@/components/landing/trust-bar';
+import Testimonials from '@/components/landing/testimonials';
 import AppLogo from '@/components/app-logo';
 import Features from '@/components/landing/features';
 import Contact from '@/components/landing/contact';
@@ -15,9 +15,9 @@ export default function Landing() {
     return (
         <>
             <Head title={t('AI Service Desk')}>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+                    href="https://fonts.bunny.net/css?family=montserrat:400,500,600"
                     rel="stylesheet"
                 />
             </Head>
