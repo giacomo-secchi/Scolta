@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TenantTestCase;
 use Tests\TestCase;
+use Tests\DuskTestCase;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ pest()->extend(TestCase::class)
 pest()
     ->extend(TenantTestCase::class)
     ->in('Tenant');
+
+pest()->extend(DuskTestCase::class)
+//  ->use(Illuminate\Foundation\Testing\DatabaseMigrations::class)
+    ->in('Browser');
 
 /*
 |--------------------------------------------------------------------------
