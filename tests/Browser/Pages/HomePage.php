@@ -19,7 +19,11 @@ class HomePage extends Page
      */
     public function assert(Browser $browser): void
     {
-        //
+        $browser->assertSee('Ready to optimize your')
+                ->assertSee('Book a Free Demo')
+                ->assertSee('Contact Sales')
+                ->assertSee('Now in Early Access')
+                ->assertSee('Trusted by teams worldwide');
     }
 
     /**
@@ -30,7 +34,8 @@ class HomePage extends Page
     public function elements(): array
     {
         return [
-            '@element' => '#selector',
+            '@heroEmailInput' => 'input[name=email]',
+            '@submitButton' => 'button[type=submit]',
         ];
     }
 }

@@ -5,6 +5,7 @@ import InputError from '@/components/input-error';
 import { Spinner } from '@/components/ui/spinner';
 import { useTrans } from '@/hooks/use-translations';
 import { Form } from '@inertiajs/react';
+import { route } from 'ziggy-js';
 
 export default function Hero() {
   const { t } = useTrans();
@@ -24,7 +25,7 @@ export default function Hero() {
       </p>
 
       <Form
-        action="/waitlist"
+        action={route('waitlist.store')}
         method="post"
         resetOnSuccess={['email']}
         className="max-w-md mx-auto"

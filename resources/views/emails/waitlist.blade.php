@@ -8,7 +8,5 @@
     <h2>New Early Access Lead</h2>
 
     <p>A new lead is interested in Scolta: {{ $email }}</p>
-
-    <p>{{ $messageText }}</p>
 </body>
 </html>
