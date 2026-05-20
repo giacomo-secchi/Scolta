@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Tests\TenantTestCase;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use Tests\TestCase;
 pest()->extend(TestCase::class)
  // ->use(RefreshDatabase::class)
     ->in('Feature');
+
+pest()
+    ->extend(TenantTestCase::class)
+    ->in('Tenant');
 
 /*
 |--------------------------------------------------------------------------

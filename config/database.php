@@ -114,6 +114,13 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'tenant' => [
+            'driver' => 'sqlite',
+            'database' => database_path('tenant_testing.sqlite'),
+            'prefix' => '',
+            'foreign_key_constraints' => true,
+        ],
+
     ],
 
     /*
