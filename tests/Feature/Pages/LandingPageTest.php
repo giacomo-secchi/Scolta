@@ -2,7 +2,6 @@
 
 use Inertia\Testing\AssertableInertia as Assert;
 
-
 it('shares the correct global inertia props', function () {
     $this->get(route('home'))
         ->assertOk()
@@ -14,7 +13,6 @@ it('shares the correct global inertia props', function () {
             ->has('auth')
         );
 });
-
 
 it('renders the landing page', function () {
     $this->get(route('home'))

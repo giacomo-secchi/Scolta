@@ -3,7 +3,6 @@
 namespace Tests;
 
 use App\Models\Tenant;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\URL;
 
 abstract class TenantTestCase extends TestCase

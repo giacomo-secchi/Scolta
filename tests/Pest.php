@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use Tests\TenantTestCase;
+use Tests\TestCase;
 
 /*
 |--------------------------------------------------------------------------
