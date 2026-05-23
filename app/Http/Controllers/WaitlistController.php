@@ -14,7 +14,7 @@ class WaitlistController extends Controller
     public function __invoke(Request $request)
     {
         $data = $request->validate([
-            'email' => 'required|email',
+            'email' => ['required', 'email'],
         ]);
 
         Mail::to(config('mail.from.address'))

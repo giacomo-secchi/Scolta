@@ -17,6 +17,7 @@ class HomePage extends Page
     /**
      * Assert that the browser is on the page.
      */
+    #[\Override]
     public function assert(Browser $browser): void
     {
         $browser->assertSee('Ready to optimize your')
@@ -31,6 +32,7 @@ class HomePage extends Page
      *
      * @return array<string, string>
      */
+    #[\Override]
     public function elements(): array
     {
         return [

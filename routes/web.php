@@ -16,7 +16,7 @@ foreach (config('tenancy.central_domains') as $domain) {
                 session()->put('locale', $locale);
             }
 
-            return redirect()->back();
+            return back();
         })->name('language.switch');
 
         Route::post('/waitlist', WaitlistController::class)->name('waitlist.store');
